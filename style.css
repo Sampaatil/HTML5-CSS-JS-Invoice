@@ -102,7 +102,7 @@ a:hover {
 .email {}
 
 #Invoice{
-    visibility: collapse;
+    display: none;
 }
 
 /* .header {
@@ -326,7 +326,7 @@ h3{
 /* ------------------------------------------------------------ */
 
 .form {
-    height: 700px;
+    height: 600px;
 
     display: flex;
     justify-content: center;
@@ -385,7 +385,12 @@ form .input-box span.details {
 
 form .button {
     height: 45px;
-    margin: 35px 0;
+    margin: 0px 0;
+    display:flex;
+    
+    justify-content: space-between;
+    position: relative;
+    
 }
 
 form .button input {
@@ -408,10 +413,15 @@ form .button input:hover {
 }
 
 @media(max-width: 584px) {
+    .form{
+        height: 860px;
+    }
     .container {
         max-width: 100%;
     }
-
+    .form-container{
+        height: 735px;
+    }
     form .user-details .input-box {
         margin-bottom: 15px;
         width: 100%;
@@ -422,8 +432,8 @@ form .button input:hover {
     }
 
     .con-container form .user-details {
-        max-height: 300px;
-        overflow-y: scroll;
+        max-height: 499px;
+        overflow-y:visible;
     }
 
     .user-details::-webkit-scrollbar {
@@ -431,10 +441,25 @@ form .button input:hover {
     }
 }
 
-@media(max-width: 459px) {
+@media(max-width: 580px) {
+    form .button{
+        display: flex;
+        flex-direction: column;
+        height: 199px;
+    }
+    form .button input {
+        width: 80%;
+        margin: 10px;
+        height: 50px;
+
+    }
     .form-container .content .category {
         flex-direction: column;
+        
     }
+    .user-details .input-box input {
+        width: 90%;
+}
 }
 #frontendContent{
     display: flex;

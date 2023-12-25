@@ -1,4 +1,7 @@
 @media print {
+  *{
+    print-color-adjust: exact !important;
+  }
   body * {
     visibility: hidden;
     
@@ -9,12 +12,13 @@
 
   #Invoice,
   #Invoice * {
-    /* position: absolute; */
+    
     visibility: visible;
   }
 
   #Invoice{
     position: absolute;
+    display: block;
     left: 0;
     top: 0;
   }
