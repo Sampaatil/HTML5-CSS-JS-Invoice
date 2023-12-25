@@ -1,3 +1,25 @@
+function addItem1() {
+  var companyInput = document.getElementById('Company').value;
+  var customInput = document.getElementById('Customer').value;
+  var emailInput = document.getElementById('Email').value;
+  var phoneInput = document.getElementById('Phone').value;
+  var invoiceInput = document.getElementById('invoiceNumber').value;
+  var dateInput = document.getElementById('Date').value;
+
+  console.log(companyInput);
+  console.log(customInput);
+  console.log(emailInput);
+  console.log(phoneInput);
+  console.log(invoiceInput);
+  console.log(dateInput);
+
+  document.getElementById('companyName').innerHTML = companyInput;
+  document.getElementById('billTo').innerHTML = "Bill to: " + customInput;
+  document.getElementById('phoneNum').innerHTML = "Phone No. " + phoneInput;
+  document.getElementById('email').innerHTML = "Email: " + emailInput;
+  document.getElementById('invoiceNo').innerHTML = "Invoice No.: " + invoiceInput;
+  document.getElementById('date').innerHTML = "Date: " + dateInput;
+}
 
 
 function addItem() {
@@ -5,6 +27,7 @@ function addItem() {
   var itemNameInput = document.getElementById('itemName');
   var quantityInput = document.getElementById('quantity');
   var priceInput = document.getElementById('price');
+  
   // var amountInput = document.getElementById('amount');
 
   var SrNo = sr_noInput.value;
@@ -12,7 +35,7 @@ function addItem() {
   var quantity = quantityInput.value;
   var price = priceInput.value;
   // var amount = amountInput.value;
-
+  ;
   if (itemName.trim() === '') {
     alert('Please enter a valid item name.');
     return;
