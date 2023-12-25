@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Portfolio</title>
+    <link rel="stylesheet" href="./style.css" />
+    <script src="./script.js"></script>
+    <link rel="stylesheet" href="print.css">
+</head>
+<script src="https://unpkg.com/typed.js@2.1.0/dist/typed.umd.js"></script>
+
+<body>
+    <header class="Navbar" style="width: 99.9%;">
+        <div class="nav-1">Image</div>
+        <div class="nav-2">
+            <a href="#">Home</a>
+            <a href="#">Invoice</a>
+            <a href="#">Contact</a>
+        </div>
+        <div class="nav-3">Social</div>
+    </header>
+    <main>
+        <section class="Hello" style="display: none;">
+            <div class="leftSection" style="width: 35%;">
+                <div style="font-size: 18px;">Hey !</div>
+                I'm <span class="purple">Suraj Shegukar</span>
+                <div style="font-size: 30px;">Welcome
+                    <span id="element"></span></div>
+                
+                <script>
+                    var typed = new Typed("#element", {
+                        strings: ["Invoice Genration"],
+                        typeSpeed: 70,
+                        loop:true,
+                        loopCount: Infinity,
+                    });
+                </script>
+                <p class="whatido">I focus on developing user-friendly web applications that meet the client's requirements, with attention to detail, scalability, and performance.</p>
+            </div>
+            <div class="rightSection">
+                <img src="./download.jpg" alt="" class="bg-png" />
+            </div>
+        </section>
+        <hr>
+        <section class="form">
+
+          <div class="form-container">
+
+              <div class="title">Detail</div>
+              <div class="con-container">
+                  <form action="#">
+                      <div id="frontendContent" class="user-details">
+                          <div class="input-box">
+                              <span class="details">Company Name</span>
+                              <input type="text" placeholder="" value="Vinu Enterprices" >
+                          </div>
+                          <div class="input-box">
+                              <span class="details">Customer Name</span>
+                              <input type="text" placeholder="Enter Customer Name" >
+                          </div>
+                          <div class="input-box">
+                              <span class="details">Email</span>
+                              <input type="text" placeholder="Enter your email" >
+                          </div>
+                          <div class="input-box">
+                              <span class="details">Phone Number</span>
+                              <input type="text" placeholder="Enter your number" >
+                          </div>
+                          <div class="input-box">
+                              <span class="details">Invoice</span>
+                              <input type="number" placeholder="Enter Invoice Number" >
+                          </div>
+                          <div class="input-box">
+                              <span class="details">Date</span>
+                              <input type="date" >
+                          </div>
+                      </div>
+                      <div id="backendContent" class="user-details">
+                          <div class="input-box">
+                              <span class="details">Item Name</span>
+                              <input type="text" id="itemName" value="Item">
+                          </div>
+                          <div class="input-box">
+                              <span class="details">Sr No.</span>
+                              <input type="text" id="sr_no" min="1" value="1">
+                          </div>
+                          <div class="input-box">
+                              <span class="details">Quantity</span>
+                              <input type="text" id="quantity" min="1" value="1">
+                          </div>
+                          <div class="input-box">
+                              <span class="details">Price/Unit</span>
+                              <input type="text" id="price" min="1" value="1">
+                          </div>
+                          
+                      </div>
+                      <div class="button">
+                        <input type="submit" style="width: 70px;margin-right: 20%;" value="Back" onclick="showContent('frontend')" class="tab">
+                        <input type="submit" value="Add Item" onclick="addItem()">
+                        <input type="submit" value="Print" onclick="printDiv()">
+                        <input type="submit" style="width: 70px;margin-left: 17%;" value="Next" onclick="showContent('backend')" class="tab">
+                      </div>
+                  </form>
+              </div>
+          </div>
+      </section>
+  </body>
+        <hr>
+        <section id="Invoice">     
+              <div class="header">
+                <div class="companyName">Vinu Enterprises</div>
+                <div class="phoneNum">Phone No. 9764560267</div>
+                <div class="email">Email: morekarsantosh17@gmail.com</div>
+              </div>
+              <br>
+              <h1>Tax Invoice</h1>
+              <div class="floatText1">
+                <span class="billTo">Bill to:</span>
+                <span class="invoiceNo">Invoice No.: 1530</span>
+              </div>
+              <br>
+              <div class="floatText2">
+                <span class="companyAddress">chandrabhaga ubran co- Itoli</span>
+                <span class="date">Date: 01-11-2023</span>
+              </div>
+          
+              <table id="itemTable">
+                <thead>
+                  <tr>
+                  <th style="width: 5%;">#</th>
+                  <th style="width: 35%; text-align: start;">Item Name</th>
+                  <th style="width: 10%;">HSN/SAC</th>
+                  <th class="rightAlign" style="width: 15%;">Quantity</th>
+                  <th class="rightAlign" style="width: 15%;">Price/Unit</th>
+                  <th class="rightAlign" style="width: 15%;">Amount</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  
+                </tbody>
+                <tfoot>
+                  <tr>
+                    <td></td>
+                    <td style="text-align: start; font-weight: bold;" >Total</td>
+                    <td ></td>
+                    <td ></td>
+                    <td ></td>
+                    <td ><span id="totalAmount">0</span></td>  
+                </tr>
+                </tfoot>
+              </table>
+              <div class="table-wrapper">
+                <div class="custom-table-container">
+                  <table class="custom-first-table">
+                    <tr>
+                      <td class="upperCase1">INVOICE AMOUNT IN WORDS</td>
+                    </tr>
+                    <tr class="custom-first-alternate-row">
+                      <td><p id="result">three</p></td>
+                    </tr>
+                    <tr>
+                      <td class="upperCase1">TERMS AND CONDITIONS</td>
+                    </tr>
+                    <tr class="custom-first-alternate-row">
+                      <td>Thank you for doing business with us.</td>
+                    </tr>
+                  </table>
+            
+                  <table class="custom-second-table">
+                    <tr>
+                      <td>Sub Total</td>
+                      <td class="rightAlign" style="text-align: end">₹ 400</td>
+                    </tr>
+                    <tr class="custom-second-highlighted-row">
+                      <td>Total</td>
+                      <td class="rightAlign" style="text-align: end">₹ 400</td>
+                    </tr>
+                    <tr>
+                      <td>Received</td>
+                      <td class="rightAlign" style="text-align: end">₹ 0.0</td>
+                    </tr>
+                    <tr class="custom-second-bottom-outline-row">
+                      <td>Balance</td>
+                      <td class="rightAlign" style="text-align: end">₹ 400</td>
+                    </tr>
+                  </table>
+                </div>
+            
+              </div>
+              <p class="signatureSpace1"> For Vinu Enterprises
+              </p>
+              <p class="signatureSpace2"> Authorized Signatory
+              </p>
+
+        </section>
+
+            <section class="contactme" style="display: none;">
+                <h3>Contact Form</h3>
+                <div class="form">
+
+                    <div class="contact-container">
+                        <img src="./—Pngtree—contact us flat design style_5874427.png" alt="">
+                    </div>
+                    <div class="contact-container">
+                        <form action="/action_page.php">
+                            <label for="fname">Full Name</label>
+                            <input type="text" id="fname" name="fullname" placeholder="Your name..">
+
+                            <label for="lname">Email</label>
+                            <input type="text" id="Email" name="Email" placeholder="Your Email..">                  
+
+                            <label for="subject">Subject</label>
+                            <textarea id="subject" name="subject" placeholder="Message.."
+                                style="height:50px"></textarea>
+
+                            <input type="submit" value="Submit">
+                        </form>
+                    </div>
+                </div>
+
+
+            </section>
+            <section class="footer" style="width: 99.7%;position: sticky;bottom: 0;">
+                <p>Made by Suraj</p>
+            </section>
+    </main>
+</body>
+
+</html>

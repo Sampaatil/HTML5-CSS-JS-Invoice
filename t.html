@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+</head>
+<style>
+    .in {
+        position: fixed;
+        border: 2px solid;
+        width: 30%;
+    }
+
+    .nice-form-group {
+        margin: 30px;
+    }
+
+    .in input {
+        position: absolute;
+        right: 50px;
+    }
+
+    .in label {
+        border: 2px solid;
+
+    }
+    .content{
+        display: none;
+    }
+    #frontendContent{
+        display: flex;
+    }
+    
+</style>
+
+<body>
+    <section class="Invoice_Inputs">
+        <h1>Inputs</h1>
+        <div class="Inputcontainer">
+            <div class="TS-btn">
+                <!-- Tab buttons -->
+                <button onclick="showContent('frontend')" class="tab">Frontend</button>
+                <button onclick="showContent('backend')" class="tab">Backend</button>
+            </div>
+            <div class="con-container">
+                <!-- Content divs -->
+                <div id="frontendContent" class="content">
+                    <div class="in">
+
+                        <div class="nice-form-group">
+                            <label>Company Name</label>
+                            <input type="text" placeholder="Company name" value="Vinu Enterprices" />
+                        </div>
+
+                        <div class="nice-form-group">
+                            <label>Company Email</label>
+                            <input type="email" placeholder="Your email" value="" />
+                        </div>
+
+                        <div class="nice-form-group">
+                            <label>Phone No.</label>
+                            <input type="tel" placeholder="Your phonenumber" value="" />
+                        </div>
+
+                        <div class="nice-form-group">
+                            <label>Customer Name</label>
+                            <input type="text" placeholder="Customer name" value="" />
+                        </div>
+
+                        <div class="nice-form-group">
+                            <label>Invoice No.</label>
+                            <input type="number" placeholder="Invoice No." />
+                        </div>
+
+                    </div>
+                </div>
+                <div id="backendContent" class="content">
+                    <div class="in">
+
+                        <div class="nice-form-group">
+                            <label>Item Name</label>
+                            <input type="text" placeholder="Company name" value="Vinu Enterprices" />
+                        </div>
+
+                        <div class="nice-form-group">
+                            <label>Quantity</label>
+                            <input type="email" placeholder="Your email" value="" />
+                        </div>
+
+                        <div class="nice-form-group">
+                            <label>Amount</label>
+                            <input type="tel" placeholder="Your phonenumber" value="" />
+                        </div>
+
+                        <div class="nice-form-group">
+                            <label>Customer Name</label>
+                            <input type="text" placeholder="Customer name" value="" />
+                        </div>
+
+                        <div class="nice-form-group">
+                            <label>Invoice No.</label>
+                            <input type="number" placeholder="Invoice No." />
+                        </div>
+
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+</body>
+<script>
+    function showContent(tabName) {
+        // Hide all content divs
+        var contentDivs = document.querySelectorAll('.content');
+        contentDivs.forEach(function (div) {
+            div.style.display = 'none';
+        });
+
+        // Remove the 'active' class from all tabs
+        var tabs = document.querySelectorAll('.tab');
+        tabs.forEach(function (tab) {
+            tab.classList.remove('active');
+        });
+
+        // Show the selected content div
+        var selectedContent = document.getElementById(tabName + 'Content');
+        selectedContent.style.display = 'flex';
+        // selectedContent.style.justifyContent = "space-around";
+
+        // Add the 'active' class to the clicked tab
+        var clickedTab = document.querySelector('.tab.' + tabName);
+        clickedTab.classList.add('active');
+    }
+</script>
+
+</html>

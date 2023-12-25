@@ -1,0 +1,29 @@
+@media print {
+  body * {
+    visibility: hidden;
+    
+  }
+  body{
+    background-color: white;
+  }
+
+  #Invoice,
+  #Invoice * {
+    /* position: absolute; */
+    visibility: visible;
+  }
+
+  #Invoice{
+    position: absolute;
+    left: 0;
+    top: 0;
+  }
+  #inputs{
+      /* opacity: 0; */
+      display: none;
+  }
+  .table-wrapper{
+      width:80%;
+  }
+  
+}
