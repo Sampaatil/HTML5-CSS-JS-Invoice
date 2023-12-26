@@ -1,4 +1,4 @@
-@media print {
+@media print and (color) {
   *{
     -print-color-adjust: exact !important;
     -webkit-print-color-adjust: exact;
