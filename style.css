@@ -113,7 +113,7 @@ td {
 }
 
 th {
-    background-color: #948fe3;
+    background-color: #948fe3 !important;
     color: white;
 }
 tfoot{
@@ -126,8 +126,8 @@ tfoot{
 }
 
 tr.highlighted-row {
-    border-top: 1px solid gray;
-    border-bottom: 1px solid gray;
+    border-top: 1px solid gray !important;
+    border-bottom: 1px solid gray !important;
     font-weight: bold;
 }
 
@@ -150,7 +150,7 @@ tr.highlighted-row {
     margin-right: -22px;
     position: relative;
     left: -65px;
-    color: #747474;
+    color: #747474 !important;
     /* border:5px solid green; */
 }
 
@@ -161,7 +161,7 @@ tr.highlighted-row {
 }
 
 .custom-first-alternate-row {
-    background-color: #f7f7f7;
+    background-color: #f7f7f7 !important;
 }
 
 .custom-second-table {
@@ -180,12 +180,12 @@ tr.highlighted-row {
 }
 
 .custom-second-highlighted-row {
-    background-color: #948fe3;
-    color: white;
+    background-color: #948fe3 !important;
+    color: white !important;
 }
 
 .custom-second-bottom-outline-row {
-    border-bottom: 1px solid gray;
+    border-bottom: 1px solid gray !important;
 }
 
 .signatureSpace1 {

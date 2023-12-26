@@ -29,5 +29,38 @@
   .table-wrapper{
       width:80%;
   }
-  
+  h1{
+    color: #948fe3;
+  }
+  th {
+    background-color: #948fe3 !important;
+    color: white;
+}
+tr.highlighted-row {
+  border-top: 1px solid gray !important;
+  border-bottom: 1px solid gray !important;
+}
+.table-wrapper {
+  background-color: white;
+}
+.custom-first-table {
+  color: #747474 !important;
+  /* border:5px solid green; */
+}
+.custom-first-alternate-row {
+  background-color: #f7f7f7 !important;
+}
+.custom-second-highlighted-row {
+  background-color: #948fe3 !important;
+  color: white !important;
+}
+
+.custom-second-bottom-outline-row {
+  border-bottom: 1px solid gray !important;
+}
+
+.signatureSpace1 {
+  color: #2c4c54;
+}
+
 }
