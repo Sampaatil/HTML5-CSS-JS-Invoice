@@ -41,51 +41,7 @@ body {
     position: absolute;
     right: 15px;
 }
-/* --------------------------------------------------------------------------------------------------- */
-.Hello {
-    display: flex;
-    justify-content: space-around;
-    align-items: center;
-    height: 600px;
 
-
-}
-
-.Hello>div {
-    width: 30%;
-    /* background-color: red; */
-}
-
-.rightSection {
-
-    margin: 50px 10px;
-}
-
-.leftSection {
-    font-size: 3rem;
-    margin-top: 50px;
-
-
-}
-.whatido{
-    margin-top:10px;
-    font-size: 18px;
-}
-
-.purple {
-    color: blueviolet;
-}
-
-a:hover {
-    color: blueviolet;
-}
-
-#element {
-    color: blueviolet;
-}
-/* --------------------------------------------------------------------------------------------------- */
-
-/* --------------------------------------------------------------------------- */
 .inputContainer{
     height: 700px;
     width: 80%;
@@ -265,65 +221,6 @@ tr.highlighted-row {
     
     padding: 11px;
 }
-/* ------------------------------------------------------------------ */
-.contactme{
-    width: 100%;
-    height: 500px;
-}
-.contactme input[type=text], select, textarea {
-  width: 100%;
-  padding: 12px;
-  border: 1px solid #ccc;
-  border-radius: 4px;
-  box-sizing: border-box;
-  margin-top: 6px;
-  margin-bottom: 16px;
-  resize: vertical;
-}
-.contactme input textarea{
-    height: 50px;
-}
-
-.contactme input[type=submit] {
-  background-color: #04AA6D;
-  color: white;
-  padding: 12px 20px;
-  border: none;
-  border-radius: 4px;
-  cursor: pointer;
-}
-
-.contactme input[type=submit]:hover {
-  background-color: #45a049;
-}
-
-.contact-container {
-  border-radius: 5px;
-  height: 300px;
-  padding: 20px;
-  width: 30%;
-  padding: auto;
-  border: 2px solid;
-  margin-top: 50px;
-}
-.form{
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    gap: 50px;
-    margin: auto;
-    height: 99%;
-}
-h3{
-    width: 99%;
-    border: 2px solid;
-    
-}
-.contact-container img{
-    width: 99%;
-    height: 70%;
-}
-/* ------------------------------------------------------------ */
 
 .form {
     height: 600px;
@@ -384,18 +281,19 @@ form .input-box span.details {
 }
 
 form .button {
+    
     height: 45px;
     margin: 0px 0;
     display:flex;
     
-    justify-content: space-between;
+    justify-content: center;
     position: relative;
     
 }
 
 form .button input {
-    height: 100%;
-    width: 20%;
+    height: 30px;
+    width: 70px;
     border-radius: 5px;
     border: none;
     color: #fff;
@@ -406,7 +304,9 @@ form .button input {
     transition: all 0.3s ease;
     background: linear-gradient(135deg, #71b7e6, #9b59b6);
 }
-
+#p{
+    margin: auto;
+}
 form .button input:hover {
     /* transform: scale(0.99); */
     background: linear-gradient(-135deg, #71b7e6, #9b59b6);
@@ -414,13 +314,13 @@ form .button input:hover {
 
 @media(max-width: 584px) {
     .form{
-        height: 860px;
+        height: 985px;
     }
     .container {
         max-width: 100%;
     }
     .form-container{
-        height: 735px;
+        height: 856px;
     }
     form .user-details .input-box {
         margin-bottom: 15px;
@@ -432,20 +332,19 @@ form .button input:hover {
     }
 
     .con-container form .user-details {
-        max-height: 499px;
+        max-height: 593px;
         overflow-y:visible;
     }
 
     .user-details::-webkit-scrollbar {
         width: 5px;
     }
-}
-
-@media(max-width: 580px) {
     form .button{
         display: flex;
-        flex-direction: column;
-        height: 199px;
+        flex-direction: row;
+        height: 131px;
+        position: relative;
+        top:-10px
     }
     form .button input {
         width: 80%;
@@ -460,10 +359,37 @@ form .button input:hover {
     .user-details .input-box input {
         width: 90%;
 }
+    #btns{
+        margin: 0 2%;
+    }
+    #p{
+        margin: 0;
+        position: relative;
+        left: 34px;
+        top:5px;
+    }
 }
+
+
 #frontendContent{
     display: flex;
     flex-wrap: wrap;
     justify-content: space-around;
     margin: "20px 0 12px 0";
+}
+button{
+    height: 100%;
+    width: 20%;
+    border-radius: 5px;
+    border: none;
+    color: #fff;
+    font-size: 18px;
+    font-weight: 500;
+    letter-spacing: 1px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    background: linear-gradient(135deg, #71b7e6, #9b59b6);
+}
+.btn{
+    display: none
 }

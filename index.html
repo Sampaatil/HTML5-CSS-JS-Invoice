@@ -21,37 +21,17 @@
         </div>
         <div class="nav-3">Social</div>
     </header>
-    <main>
-        <section class="Hello" style="display: none;">
-            <div class="leftSection" style="width: 35%;">
-                <div style="font-size: 18px;">Hey !</div>
-                I'm <span class="purple">Suraj Shegukar</span>
-                <div style="font-size: 30px;">Welcome
-                    <span id="element"></span></div>
-                
-                <script>
-                    var typed = new Typed("#element", {
-                        strings: ["Invoice Genration"],
-                        typeSpeed: 70,
-                        loop:true,
-                        loopCount: Infinity,
-                    });
-                </script>
-                <p class="whatido">I focus on developing user-friendly web applications that meet the client's requirements, with attention to detail, scalability, and performance.</p>
-            </div>
-            <div class="rightSection">
-                <img src="./download.jpg" alt="" class="bg-png" />
-            </div>
-        </section>
-        <hr>
+    
         <section class="form">
 
           <div class="form-container">
+
 
               <div class="title">Detail</div>
               <div class="con-container">
                   <form action="#">
                       <div id="frontendContent" class="user-details">
+                          
                           <div class="input-box">
                               <span class="details">Company Name</span>
                               <input type="text" id="Company" placeholder="" value="Vinu Enterprices" >
@@ -80,6 +60,7 @@
                           align-items: center;">
                             <input type="submit" value="+Add " onclick="addItem1()">
                           </div>
+                          
                       </div>
                       <div id="backendContent" class="user-details">
                           <div class="input-box">
@@ -98,17 +79,23 @@
                               <span class="details">Price/Unit</span>
                               <input type="text" id="price" min="1" value="1">
                           </div>
-                          <div class="button">
-                            <input type="submit" style="width: 100%;display: flex;align-items: center;" 
+                          <div class="button" style="width: 40%;display: flex;
+                          align-items: center;">
+                            <input type="submit" 
                             value="+Add " onclick="addItem()">
+                            
                           </div>
                           
                       </div>
-                      <div class="button">
-                        <input type="submit" style="width: 70px;" value="Back" onclick="showContent('frontend')" class="tab">
-                        
-                        <input type="submit" value="Print" onclick="printDiv()">
-                        <input type="submit" style="width: 70px;" value="Next" onclick="showContent('backend')" class="tab">
+                      <div class="button" style="display:flex;flex-direction: column;" >
+                        <div id="p" >
+                          <input type="submit" value="Print" onclick="printDiv()">
+                        </div>
+                        <div id="btns" style="width: 100%;display: flex;justify-content: space-between;">
+
+                          <input type="submit"  value="Back" onclick="showContent('frontend')" class="tab">
+                          <input type="submit"  value="Next" onclick="showContent('backend')" class="tab">
+                        </div>
                       </div>
                   </form>
               </div>
@@ -205,32 +192,6 @@
             </div>
         </section>
 
-            <section class="contactme" style="display: none;">
-                <h3>Contact Form</h3>
-                <div class="form">
-
-                    <div class="contact-container">
-                        <img src="./—Pngtree—contact us flat design style_5874427.png" alt="">
-                    </div>
-                    <div class="contact-container">
-                        <form action="/action_page.php">
-                            <label for="fname">Full Name</label>
-                            <input type="text" id="fname" name="fullname" placeholder="Your name..">
-
-                            <label for="lname">Email</label>
-                            <input type="text" id="Email" name="Email" placeholder="Your Email..">                  
-
-                            <label for="subject">Subject</label>
-                            <textarea id="subject" name="subject" placeholder="Message.."
-                                style="height:50px"></textarea>
-
-                            <input type="submit" value="Submit">
-                        </form>
-                    </div>
-                </div>
-
-
-            </section>
             <section class="footer" style="width: 99.7%;position: sticky;bottom: 0; backdrop-filter: blur(10px);">
                 <p>Made by Suraj</p>
             </section>

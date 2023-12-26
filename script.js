@@ -23,6 +23,7 @@ function addItem1() {
 
 
 function addItem() {
+
   var sr_noInput = document.getElementById('sr_no');
   var itemNameInput = document.getElementById('itemName');
   var quantityInput = document.getElementById('quantity');
