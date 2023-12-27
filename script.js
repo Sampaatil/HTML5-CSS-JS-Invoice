@@ -1,7 +1,3 @@
-function displaySelectedProduct() {
-  var userInput = document.getElementById("itemName").value;
-  alert("Selected Product: " + userInput);
-}
 
 function addItem1() {
   var companyInput = document.getElementById('Company').value;
@@ -94,6 +90,7 @@ function calculateTotal() {
     let amountInWord = inWords(overallAmount).toUpperCase();
     document.getElementById('result').innerHTML= amountInWord;
     document.getElementById('oTotal').innerHTML = '₹' +overallAmount;
+    document.getElementById('bal').innerHTML = '₹' +overallAmount;
 
   // Set the total text
   
