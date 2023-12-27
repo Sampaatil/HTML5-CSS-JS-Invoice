@@ -1,3 +1,8 @@
+function displaySelectedProduct() {
+  var userInput = document.getElementById("itemName").value;
+  alert("Selected Product: " + userInput);
+}
+
 function addItem1() {
   var companyInput = document.getElementById('Company').value;
   var customInput = document.getElementById('Customer').value;
@@ -58,7 +63,7 @@ function addItem() {
   cell3.innerHTML = ""
   cell4.innerHTML = quantity;
   cell5.innerHTML = "₹" + price;
-  cell6.innerHTML = "₹" + quantity * price;
+  cell6.innerHTML = "₹"+ quantity * price;
 
   var currentValue = parseFloat(sr_noInput.value);
   if (!isNaN(currentValue)) {
@@ -71,67 +76,55 @@ function addItem() {
   // quantityInput.value = 1;
   quantityInput.value = 1;
   priceInput.value = 1;
-  amountInput.value = 1;
-  // calculateTotal();
-  // convertToWords();
-  // console.log(calculateTotal);
+  // amountInput.value = 1;
+  
+
 }
-// function calculateTotal() {
-//   var total = 0;
+function calculateTotal() {
+    var table = document.getElementById('itemTable');
+    let total = 0;
+    for(let i = 1; i<table.rows.length; i++){
+        total+=Number(table.rows[i].cells[5].innerText.replace('₹',''));
+    }
+    document.getElementById('totalAmount').innerHTML= '₹'+ total; 
+    document.getElementById('subTotal').innerHTML= '₹'+ total; 
+    document.getElementById('tax').innerHTML= '₹'+ total*(0.18);
+    let overallAmount = total + total*(0.18);
+    
+    let amountInWord = inWords(overallAmount).toUpperCase();
+    document.getElementById('result').innerHTML= amountInWord;
+    document.getElementById('oTotal').innerHTML = '₹' +overallAmount;
 
-//   var amountElements = document.querySelectorAll('#myTable tbody td:nth-child(6)');
-
-//   amountElements.forEach(function (amountElement) {
-//       var amountValue = parseFloat(amountElement.innerText);
-//       if (!isNaN(amountValue)) {
-//           total += amountValue;
-//       }
-//   });
-
-//   document.getElementById('totalAmount').innerText = total;
-// }
+  // Set the total text
+  
+}
 
 
 function printDiv() {
+  
+  calculateTotal();
+
   window.print();
+
 }
 
-// function convertToWords() {
-//   var numberInput = document.getElementById('amount');
-//   var resultElement = document.getElementById('result');
+function inWords (num) {
+  var a = ['','one ','two ','three ','four ', 'five ','six ','seven ','eight ','nine ','ten ','eleven ','twelve ','thirteen ','fourteen ','fifteen ','sixteen ','seventeen ','eighteen ','nineteen '];
+  var b = ['', '', 'twenty','thirty','forty','fifty', 'sixty','seventy','eighty','ninety'];
+  if ((num = num.toString()).length > 9) return 'The Number is too big';
+  n = ('000000000' + num).substr(-9).match(/^(\d{2})(\d{2})(\d{2})(\d{1})(\d{2})$/);
+  if (!n) return; var str = '';
+  str += (n[1] != 0) ? (a[Number(n[1])] || b[n[1][0]] + ' ' + a[n[1][1]]) + 'crore ' : '';
+  str += (n[2] != 0) ? (a[Number(n[2])] || b[n[2][0]] + ' ' + a[n[2][1]]) + 'lakh ' : '';
+  str += (n[3] != 0) ? (a[Number(n[3])] || b[n[3][0]] + ' ' + a[n[3][1]]) + 'thousand ' : '';
+  str += (n[4] != 0) ? (a[Number(n[4])] || b[n[4][0]] + ' ' + a[n[4][1]]) + 'hundred ' : '';
+  str += (n[5] != 0) ? ((str != '') ? 'and ' : '') + (a[Number(n[5])] || b[n[5][0]] + ' ' + a[n[5][1]]) + 'only ' : '';
+  return str;
 
-//   // Define arrays for one-digit, two-digit, and tens multiples
-//   var oneDigit = ['Zero', 'One', 'Two', 'Three', 'Four', 'Five', 'Six', 'Seven', 'Eight', 'Nine'];
-//   var twoDigit = ['', 'Ten', 'Twenty', 'Thirty', 'Forty', 'Fifty', 'Sixty', 'Seventy', 'Eighty', 'Ninety'];
-//   var teens = ['Eleven', 'Twelve', 'Thirteen', 'Fourteen', 'Fifteen', 'Sixteen', 'Seventeen', 'Eighteen', 'Nineteen'];
+}
 
-//   // Convert the number to an array of digits
-//   var digits = numberInput.toString().split('').map(Number);
-
-//   // Handle single-digit and two-digit numbers
-//   if (digits.length === 1) {
-//     resultElement.innerText = 'Result: ' + oneDigit[digits[0]];
-//   } else if (digits.length === 2) {
-//     if (digits[0] === 1) {
-//       resultElement.innerText = 'Result: ' + teens[digits[1] - 1];
-//     } else {
-//       resultElement.innerText = 'Result: ' + twoDigit[digits[0]] + ' ' + (digits[1] !== 0 ? oneDigit[digits[1]] : '');
-//     }
-//   } else {
-//     // Handle three-digit numbers
-//     var hundreds = oneDigit[digits[0]] + ' Hundred';
-//     var tens = (digits[1] === 1 ? teens[digits[2] - 1] : twoDigit[digits[1]]) + ' ' + (digits[2] !== 0 ? oneDigit[digits[2]] : '');
-
-//     resultElement.innerHTML = 'Result: ' + (digits[0] !== 0 ? hundreds + ' ' : '') + (digits[1] !== 0 ? tens : '');
-//   }
-// }
-
-
-
-function showContent(tabName, event) {
-  if (event) {
-    event.preventDefault();
-  }
+function showContent(tabName) {
+  
   // Hide all content divs
   var contentDivs = document.querySelectorAll('.user-details');
   contentDivs.forEach(function (div) {

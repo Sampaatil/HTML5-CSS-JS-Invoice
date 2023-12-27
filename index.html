@@ -65,20 +65,32 @@
                       <div id="backendContent" class="user-details">
                           <div class="input-box">
                               <span class="details">Item Name</span>
-                              <input type="text" id="itemName" value="Item">
+                              <input type="text" id="itemName" list="products" placeholder="Type to select" required /> 
+                              <datalist id="products">
+                                <option value="8CH Hikavision DVR">
+                                <option value="2MP Dome camera">
+                                <option value="2MP Bullet Camera">
+                                <option value="1TB HDD">
+                                <option value="8CH SMPS Krishana">
+                                <option value="BNC/DC/Box">
+                                <option value="Wire 3+1">
+                                <option value="Camera Installation">
+                                <option value="4G/5G Router">
+                              </datalist>
                           </div>
                           <div class="input-box">
                               <span class="details">Sr No.</span>
-                              <input type="text" id="sr_no" min="1" value="1">
+                              <input type="number" id="sr_no" min="1" value="1">
                           </div>
                           <div class="input-box">
                               <span class="details">Quantity</span>
-                              <input type="text" id="quantity" min="1" value="1">
+                              <input type="number" id="quantity" min="1" value="1">
                           </div>
                           <div class="input-box">
                               <span class="details">Price/Unit</span>
-                              <input type="text" id="price" min="1" value="1">
+                              <input type="number" id="price" min="1" value="1">
                           </div>
+                          
                           <div class="button" style="width: 40%;display: flex;
                           align-items: center;">
                             <input type="submit" 
@@ -167,11 +179,15 @@
                   <table class="custom-second-table">
                     <tr>
                       <td>Sub Total</td>
-                      <td class="rightAlign" style="text-align: end">₹ 400</td>
+                      <td class="rightAlign" id="subTotal" style="text-align: end">₹ 0</td>
+                    </tr>
+                    <tr>
+                      <td>Tax (CGST+SGST) </td>
+                      <td class="rightAlign" id="tax" style="text-align: end">₹0</td>
                     </tr>
                     <tr class="custom-second-highlighted-row">
                       <td>Total</td>
-                      <td class="rightAlign" style="text-align: end">₹ 400</td>
+                      <td class="rightAlign" id="oTotal" style="text-align: end">₹0</td>
                     </tr>
                     <tr>
                       <td>Received</td>
