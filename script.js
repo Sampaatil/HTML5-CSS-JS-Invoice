@@ -7,13 +7,6 @@ function addItem1() {
   var invoiceInput = document.getElementById('invoiceNumber').value;
   var dateInput = document.getElementById('Date').value;
 
-  console.log(companyInput);
-  console.log(customInput);
-  console.log(emailInput);
-  console.log(phoneInput);
-  console.log(invoiceInput);
-  console.log(dateInput);
-
   document.getElementById('companyName').innerHTML = companyInput;
   document.getElementById('billTo').innerHTML = "Bill to: " + customInput;
   document.getElementById('phoneNum').innerHTML = "Phone No. " + phoneInput;
@@ -37,7 +30,7 @@ function addItem() {
   var quantity = quantityInput.value;
   var price = priceInput.value;
   // var amount = amountInput.value;
-  ;
+  
   if (itemName.trim() === '') {
     alert('Please enter a valid item name.');
     return;
@@ -77,31 +70,46 @@ function addItem() {
 
 }
 function calculateTotal() {
-    var table = document.getElementById('itemTable');
-    let total = 0;
-    for(let i = 1; i<table.rows.length; i++){
-        total+=Number(table.rows[i].cells[5].innerText.replace('₹',''));
-    }
-    document.getElementById('totalAmount').innerHTML= '₹'+ total; 
-    document.getElementById('subTotal').innerHTML= '₹'+ total; 
-    document.getElementById('tax').innerHTML= '₹'+ total*(0.18);
-    let overallAmount = total + total*(0.18);
-    
-    let amountInWord = inWords(overallAmount).toUpperCase();
-    document.getElementById('result').innerHTML= amountInWord;
-    document.getElementById('oTotal').innerHTML = '₹' +overallAmount;
-    document.getElementById('bal').innerHTML = '₹' +overallAmount;
+  var table = document.getElementById('itemTable');
+  let total = 0;
 
-  // Set the total text
+  // Loop through table rows, starting from index 1 (skipping header)
+  for (let i = 1; i < table.rows.length -1; i++) {
+    // Use parseFloat for more reliable parsing of numeric values
+    total += parseFloat(table.rows[i].cells[5].innerText.replace('₹', '')) || 0;
+  }
+
+  // Display total, subTotal, and tax amounts
+  document.getElementById('totalAmount').innerHTML = '₹' + total;
+  document.getElementById('subTotal').innerHTML = '₹' + total;
   
+  // Calculate and display tax amount (assuming tax is 18%)
+  var taxAmount = total * 0.18;
+  document.getElementById('tax').innerHTML = '₹' + taxAmount.toFixed(2);
+
+  // Calculate overall amount
+  let overallAmount = total + taxAmount;
+
+  // Display overall amount and convert to words using the inWords function
+  document.getElementById('oTotal').innerHTML = '₹' + overallAmount.toFixed(2);
+  document.getElementById('result').innerHTML = inWords(overallAmount).toUpperCase();
+
+  // Set 'bal' to overall amount (assuming 'bal' stands for balance)
+  document.getElementById('bal').innerHTML = '₹' + overallAmount.toFixed(2);
 }
 
+var isClickInProgress = false;
 
 function printDiv() {
   
+  if(isClickInProgress){
+    return;
+  }
+  isClickInProgress = true;
   calculateTotal();
 
   window.print();
+  isClickInProgress = false;
 
 }
 
@@ -120,8 +128,9 @@ function inWords (num) {
 
 }
 
+
 function showContent(tabName) {
-  
+
   // Hide all content divs
   var contentDivs = document.querySelectorAll('.user-details');
   contentDivs.forEach(function (div) {
@@ -136,12 +145,17 @@ function showContent(tabName) {
 
   // Show the selected content div
   var selectedContent = document.getElementById(tabName + 'Content');
-  selectedContent.style.display = 'flex';
-  selectedContent.style.justifyContent = "space-around";
-  selectedContent.style.flexWrap = "wrap";
-  selectedContent.style.margin = "20px 0 12px 0";
+  if (selectedContent) {
+    selectedContent.style.display = 'flex';
+    selectedContent.style.justifyContent = "space-around";
+    selectedContent.style.flexWrap = "wrap";
+    selectedContent.style.margin = "20px 0 12px 0";
 
-  // Add the 'active' class to the clicked tab
-  var clickedTab = document.querySelector('.tab.' + tabName);
-  clickedTab.classList.add('active');
+    // Add the 'active' class to the clicked tab
+    var clickedTab = document.querySelector('.tab.' + tabName);
+    if (clickedTab) {
+      clickedTab.classList.add('active');
+    }
+  }
 }
+  
