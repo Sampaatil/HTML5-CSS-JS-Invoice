@@ -74,7 +74,7 @@ h1 {
 }
 
 .floatText1 {
-    margin-bottom: 30px;
+    margin-bottom: 10px;
     
 }
 
@@ -92,6 +92,10 @@ h1 {
 }
 
 .companyAddress {
+    float: left;
+}
+.customer-phone{
+    
     float: left;
 }
 
@@ -314,13 +318,14 @@ form .button input:hover {
 
 @media(max-width: 584px) {
     .form{
-        height: 985px;
+        height: 1100px;
     }
     .container {
         max-width: 100%;
     }
     .form-container{
-        height: 856px;
+        margin-top:50px ;
+        height: 1000px;
     }
     form .user-details .input-box {
         margin-bottom: 15px;
@@ -344,8 +349,9 @@ form .button input:hover {
         flex-direction: row;
         height: 131px;
         position: relative;
-        top:-10px
+        
     }
+    
     form .button input {
         width: 80%;
         margin: 10px;
@@ -360,13 +366,15 @@ form .button input:hover {
         width: 90%;
 }
     #btns{
-        margin: 0 2%;
+        position: relative;
+        top: 190px;
     }
+    
     #p{
         margin: 0;
         position: relative;
         left: 34px;
-        top:5px;
+        top:190px;
     }
 }
 

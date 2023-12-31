@@ -42,11 +42,19 @@
                           </div>
                           <div class="input-box">
                               <span class="details">Email</span>
-                              <input type="text" id="Email" placeholder="Enter your email" >
+                              <input type="email" id="Email" placeholder="Enter your email" value="morekarsantosh17@gmail.com" >
+                          </div>
+                          <div class="input-box">
+                              <span class="details">Customer Email</span>
+                              <input type="email" id="customer-Email" placeholder="Enter your customer email" >
                           </div>
                           <div class="input-box">
                               <span class="details">Phone Number</span>
                               <input type="number" id="Phone" placeholder="Enter your number" >
+                          </div>
+                          <div class="input-box">
+                              <span class="details">Customer Phone Number</span>
+                              <input type="number" id="cusPhone" placeholder="Enter your number" >
                           </div>
                           <div class="input-box">
                               <span class="details">Invoice No.</span>
@@ -56,7 +64,7 @@
                               <span class="details">Date</span>
                               <input type="date" id="Date">
                           </div>
-                          <div class="button" style="width: 40%;display: flex;
+                          <div class="button" id="bb" style="width: 40%;display: flex;
                           align-items: center;">
                             <input type="submit" value="+Add " onclick="addItem1()">
                           </div>
@@ -121,6 +129,7 @@
                 <div class="companyName" id="companyName" >Vinu Enterprises</div>
                 <div class="phoneNum" id="phoneNum" >Phone No. 9764560267</div>
                 <div class="email" id="email" >Email: morekarsantosh17@gmail.com</div>
+                <img style="position:absolute;top:0;right:100px;width:80px;height: 80px;" src="./WhatsApp Image 2023-12-28 at 15.58.05_4ad0bb81.jpg" alt="">
               </div>
               <br>
               <h1>Tax Invoice</h1>
@@ -130,7 +139,8 @@
               </div>
               <br>
               <div class="floatText2">
-                <span class="companyAddress">chandrabhaga ubran co- Itoli</span>
+                <span class="customer-phone" id = "customer-phone"></span><br>
+                <span class="companyAddress" id = "customer-email"></span>
                 <span class="date" id="date">Date: 01-11-2023</span>
               </div>
           

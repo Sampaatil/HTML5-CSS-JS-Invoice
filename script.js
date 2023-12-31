@@ -2,15 +2,19 @@
 function addItem1() {
   var companyInput = document.getElementById('Company').value;
   var customInput = document.getElementById('Customer').value;
+  var customerEmailInput = document.getElementById('customer-Email').value;
   var emailInput = document.getElementById('Email').value;
+  var customerPhoneInput = document.getElementById('cusPhone').value;
   var phoneInput = document.getElementById('Phone').value;
   var invoiceInput = document.getElementById('invoiceNumber').value;
   var dateInput = document.getElementById('Date').value;
 
   document.getElementById('companyName').innerHTML = companyInput;
   document.getElementById('billTo').innerHTML = "Bill to: " + customInput;
+  document.getElementById('customer-phone').innerHTML = "Phone No. " + customerPhoneInput;
   document.getElementById('phoneNum').innerHTML = "Phone No. " + phoneInput;
-  document.getElementById('email').innerHTML = "Email: " + emailInput;
+  document.getElementById('email').innerHTML ="Email: " + emailInput;
+  document.getElementById('customer-email').innerHTML = customerEmailInput;
   document.getElementById('invoiceNo').innerHTML = "Invoice No.: " + invoiceInput;
   document.getElementById('date').innerHTML = "Date: " + dateInput;
 }
@@ -61,7 +65,7 @@ function addItem() {
 
   // Clear input fields
   sr_noInput.value = result;
-  itemNameInput.value = 'Item';
+  itemNameInput.value = '';
   // quantityInput.value = 1;
   quantityInput.value = 1;
   priceInput.value = 1;
