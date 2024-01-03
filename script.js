@@ -1,5 +1,5 @@
 
-function addItem1() {
+function addcontent() {
   var companyInput = document.getElementById('Company').value;
   var customInput = document.getElementById('Customer').value;
   var customerEmailInput = document.getElementById('customer-Email').value;
@@ -10,6 +10,8 @@ function addItem1() {
   var dateInput = document.getElementById('Date').value;
 
   document.getElementById('companyName').innerHTML = companyInput;
+  document.getElementById("signatureSpace1").innerHTML = "For " + companyInput;
+
   document.getElementById('billTo').innerHTML = "Bill to: " + customInput;
   document.getElementById('customer-phone').innerHTML = "Phone No. " + customerPhoneInput;
   document.getElementById('phoneNum').innerHTML = "Phone No. " + phoneInput;
@@ -141,7 +143,7 @@ function showContent(tabName) {
     div.style.display = 'none';
   });
 
-  // Remove the 'active' class from all tabs
+  // // Remove the 'active' class from all tabs
   var tabs = document.querySelectorAll('.tab');
   tabs.forEach(function (tab) {
     tab.classList.remove('active');
